@@ -1,0 +1,72 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Two-line prompt matching the WSL bash profile style:
+#   user [WSL] @ (host) [dir: path] [⎇ branch] ➜  Mon Apr 13, 14:30
+#        ⚡
+format = """
+$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
+$git_branch$git_status ➜  $time
+     $character"""
+
+add_newline = false
+
+# ── Username ──────────────────────────────────────────────────── yellow
+[username]
+show_always = true
+style_user  = "yellow bold"
+format      = "[$user]($style)"
+
+# ── Hostname ──────────────────────────────────────────────────── magenta
+[hostname]
+ssh_only  = false
+disabled  = false
+trim_at   = ""
+format    = "[$hostname](blue)"
+
+# ── Directory ─────────────────────────────────────────────────── red (last component only)
+[directory]
+format           = "[$path](red bold)"
+truncation_length = 1
+truncate_to_repo  = false
+
+# ── Git branch ────────────────────────────────────────────────── ⎇ symbol in magenta
+[git_branch]
+symbol = "  "
+format = " \\[[$symbol](purple)[$branch](yellow) \\( "
+
+# ── Git status ────────────────────────────────────────────────── mirrors GIT_PS1_SHOW* vars
+# * unstaged changes   + staged changes   ? untracked   $ stash
+# ⇡/⇣ ahead/behind upstream  (matches SHOWDIRTYSTATE / SHOWUNTRACKEDFILES / SHOWUPSTREAM)
+# ── Git status ────────────────────────────────────────────────── per-indicator colors
+# Starship doesn't support *_style keys — colors must live in the format string.
+# $staged      green   + committed to index
+# $modified    yellow  * unstaged changes
+# $untracked   red     ? new files not in index
+# $stashed     blue    $ stash entries present
+# $renamed     cyan    » renamed files
+# $deleted     red     ✘ deleted files
+# $ahead_behind         ⇡/⇣/⇕ upstream divergence
+[git_status]
+format    = "([$staged](green)[$modified](yellow)[$untracked](red)[$stashed](blue)[$renamed](cyan)[$deleted](red)[$ahead_behind](green)) \\) \\]"
+staged    = "+"
+modified  = "*"
+untracked = "?"
+stashed   = "\\$"
+renamed   = "»"
+deleted   = "✘"
+up_to_date = "[✓](green)"
+ahead     = "⇡${count}"
+behind    = "[⇣${count}](red)"
+diverged  = "[⇕⇡${ahead_count}⇣${behind_count}](purple)"
+
+# ── Timestamp ─────────────────────────────────────────────────── blue  "Mon Apr 13, 14:30"
+[time]
+disabled    = false
+format      = "[$time](blue)"
+time_format = "%a %b %d, %H:%M"
+
+# ── Prompt character ──────────────────────────────────────────── red on second line
+[character]
+success_symbol = "[❯](green)"
+error_symbol   = "[❯](red)"
+format         = "$symbol "
