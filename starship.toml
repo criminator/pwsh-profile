@@ -1,8 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Two-line prompt matching the WSL bash profile style:
-#   user [WSL] @ (host) [dir: path] [⎇ branch] ➜  Mon Apr 13, 14:30
-#        ⚡
+# Prompt format
 format = """
 $username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
