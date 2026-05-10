@@ -2,7 +2,7 @@
 
 # Prompt format
 format = """
-$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
+$python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
      $character"""
 
@@ -56,6 +56,14 @@ up_to_date = "[✓](green)"
 ahead     = "⇡${count}"
 behind    = "[⇣${count}](red)"
 diverged  = "[⇕⇡${ahead_count}⇣${behind_count}](purple)"
+
+# ── Python virtual environment ─────────────────────────────────
+[python]
+symbol = " 🐍 "
+format = "\\($symbol [$virtualenv](bold green) \\) "
+detect_extensions = []
+detect_files = []
+detect_folders = []
 
 # ── Timestamp ─────────────────────────────────────────────────── blue  "Mon Apr 13, 14:30"
 [time]
