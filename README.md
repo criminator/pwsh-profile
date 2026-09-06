@@ -1,6 +1,10 @@
-# Powershell (pwsh.exe) profile configuration
-- Install starship with `winget install starship`
-- Add this to `$PROFILE` $\rightarrow$ `Invoke-Expression (&starship init powershell)`
-- Copy [starship.toml](./starship.toml) to `~/.config`
-
+# WSL Configuration (Starship)
+- if you dont have starship, I would install it with one of the following:
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+or (if you have Homebrew)
+```bash
+brew install starship
+```
 
