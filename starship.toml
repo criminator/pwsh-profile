@@ -2,7 +2,7 @@
 
 # Prompt format
 format = """
-$python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
+$python$username @ ($hostname) [WSL](green bold) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
      $character"""
 
@@ -30,7 +30,7 @@ truncate_to_repo  = false
 # ── Git branch ────────────────────────────────────────────────── ⎇ symbol in magenta
 [git_branch]
 symbol = "  "
-format = " \\[[$symbol](bright-yellow)[$branch](bright-cyan) \\( "
+format = " \\[[$symbol](purple)[$branch](yellow) \\( "
 
 # ── Git status ────────────────────────────────────────────────── mirrors GIT_PS1_SHOW* vars
 # * unstaged changes   + staged changes   ? untracked   $ stash
@@ -68,7 +68,7 @@ detect_folders = []
 # ── Timestamp ─────────────────────────────────────────────────── blue  "Mon Apr 13, 14:30"
 [time]
 disabled    = false
-format      = "[$time](bright-purple)"
+format      = "[$time](blue)"
 time_format = "%a %b %d, %H:%M"
 
 # ── Prompt character ──────────────────────────────────────────── red on second line
