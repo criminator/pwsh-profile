@@ -68,11 +68,11 @@ detect_folders = []
 # ── Timestamp ─────────────────────────────────────────────────── blue  "Mon Apr 13, 14:30"
 [time]
 disabled    = false
-format      = "[$time](blue)"
+format      = "[$time](bright-purple)"
 time_format = "%a %b %d, %H:%M"
 
 # ── Prompt character ──────────────────────────────────────────── red on second line
 [character]
-success_symbol = "[❯](green)"
-error_symbol   = "[❯](red)"
+success_symbol = "[❯](bright-green)"
+error_symbol   = "[❯](bright-red)"
 format         = "$symbol "
