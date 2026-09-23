@@ -2,7 +2,7 @@
 
 # Prompt format
 format = """
-$python$username @ ($hostname) [WSL](green bold) \\[[dir](cyan)[: ](white)$directory\\]\
+[◉](bright-green) $python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
      $character"""
 
