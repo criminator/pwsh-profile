@@ -1,10 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# character ideas:⬡⦿
 # Prompt format
 format = """
-[◉](bright-green) $python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
+[◉](#8cb3ff) $python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
-     $character"""
+$character"""
 
 add_newline = false
 
@@ -19,7 +20,7 @@ format      = "[$user]($style)"
 ssh_only  = false
 disabled  = false
 trim_at   = ""
-format    = "[$hostname](blue)"
+format    = "[$hostname](#ff7575)"
 
 # ── Directory ─────────────────────────────────────────────────── red (last component only)
 [directory]
