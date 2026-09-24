@@ -3,7 +3,7 @@
 # character ideas:⬡⦿
 # Prompt format
 format = """
-[◉](#8cb3ff) $python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
+[◉](#45ffab) $python$username @ ($hostname) \\[[dir](cyan)[: ](white)$directory\\]\
 $git_branch$git_status ➜  $time
 $character"""
 
@@ -20,7 +20,7 @@ format      = "[$user]($style)"
 ssh_only  = false
 disabled  = false
 trim_at   = ""
-format    = "[$hostname](#ff7575)"
+format    = "[$hostname](#59e6ff)"
 
 # ── Directory ─────────────────────────────────────────────────── red (last component only)
 [directory]
